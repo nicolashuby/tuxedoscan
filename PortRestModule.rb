@@ -3,9 +3,9 @@ require 'json'
 
 include WEBrick
 
-class IpckeyServlet < HTTPServlet::AbstractServlet
+class PortServlet < HTTPServlet::AbstractServlet
 def do_GET(req,resp)
-        data = File.read('data/ipckeyTuxedo1.json')
+        data = File.read('data/portTuxedo1.json')
         resp['Content-Type'] = 'application/json'
         resp.body = data
         raise HTTPStatus::OK
