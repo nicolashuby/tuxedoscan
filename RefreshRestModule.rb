@@ -5,18 +5,14 @@ include WEBrick
 
 class RefreshServlet < HTTPServlet::AbstractServlet
    def do_GET(req,resp)
-	#resp['Content-Type'] = 'application/json'
-	time = getTime()
-        puts "Time from do_GET #{time}" 
-	resp.body = time.to_s
+	resp.body = getTime()
         raise HTTPStatus::OK
    end
 
     def getTime()
       time = Time.new
-      #sleep(5)
-      puts time
-      return time
+      sleep(5)
+      return time.to_s
     end 
 end
 
